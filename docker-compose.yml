@@ -1,0 +1,14 @@
+services:
+    application:
+        image: php:8.3.7-fpm
+        container_name: {novo-projeto}-application
+        hostname: {novo-projeto}-application
+        working_dir: /var/www/html
+        volumes:
+            - .:/var/www/html
+        networks:
+            - {novo-projeto}-network
+
+networks:
+  {novo-projeto}-network:
+    driver: bridge
